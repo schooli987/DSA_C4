@@ -19,7 +19,7 @@ def check_restock(rack, name):
     sorted_rack = sort_rack(rack)
     print(f"{name} Rack after sorting:", sorted_rack)
     if len(rack) < 5:
-        print(f"⚠️ Restock Alert: {name} rack has only {len(rack)} ball(s).\n")
+        print(f"Restock Alert: {name} rack has only {len(rack)} ball(s).\n")
 
 # Check each rack
 check_restock(small_rack, "Small")
