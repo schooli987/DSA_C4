@@ -22,7 +22,7 @@ tshirt_list = sizes_input.upper().split()
 sorted_tshirts = insertion_sort(tshirt_list)
 
 # Step 4: Display sorted list
-print("\n📦 Sorted T-shirts for Clearance Sale:", sorted_tshirts)
+print("\nSorted T-shirts for Clearance Sale:", sorted_tshirts)
 
 # Step 5: Categorize sorted sizes into shelves
 large_shelf = []
@@ -38,6 +38,6 @@ for size in sorted_tshirts:
         small_shelf.append(size)
 
 # Step 6: Display shelves
-print("\n🧥 Large Shelf :", large_shelf)
-print("👕 Medium Shelf:", medium_shelf)
-print("🧢 Small Shelf :", small_shelf)
+print("\n Large Shelf :", large_shelf)
+print("\n Medium Shelf:", medium_shelf)
+print("\n Small Shelf :", small_shelf)
