@@ -11,6 +11,6 @@ for i in range(1, len(tshirt_list)):
     tshirt_list[j + 1] = key_item
 
 # Step 3: Print the sorted list
-print("🔥 Clearance Sale – T-Shirts Sorted from Largest to Smallest:")
+print("Clearance Sale – T-Shirts Sorted from Largest to Smallest:")
 for code, size in tshirt_list:
     print(f"{code} - Size {size}")
