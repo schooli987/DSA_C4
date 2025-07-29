@@ -1,9 +1,12 @@
-# Function to sort a list using Insertion Sort
+# Function to sort t-shirt sizes using Insertion Sort in descending size order (L > M > S)
 def insertion_sort(arr):
+    # Define custom order
+    size_order = {'L': 3, 'M': 2, 'S': 1}
+    
     for i in range(1, len(arr)):
         key = arr[i]
         j = i - 1
-        while j >= 0 and arr[j] > key:
+        while j >= 0 and size_order[arr[j]] < size_order[key]:
             arr[j + 1] = arr[j]
             j -= 1
         arr[j + 1] = key
@@ -12,28 +15,29 @@ def insertion_sort(arr):
 # Step 1: Get sizes from user
 sizes_input = input("Enter t-shirt sizes separated by spaces (e.g., S M L M S): ")
 
-# Step 2: Convert input string to a list (no need to convert to int here)
-tshirt_list = sizes_input.upper().split()  # Convert all inputs to uppercase for consistency
+# Step 2: Convert input string to a list
+tshirt_list = sizes_input.upper().split()
 
-# Step 3: Categorize sizes into shelves
-small = []
-medium = []
-large = []
+# Step 3: Sort using Insertion Sort based on size order
+sorted_tshirts = insertion_sort(tshirt_list)
 
-for size in tshirt_list:
-    if size == 'S':
-        small.append(size)
+# Step 4: Display sorted list
+print("\n📦 Sorted T-shirts for Clearance Sale:", sorted_tshirts)
+
+# Step 5: Categorize sorted sizes into shelves
+large_shelf = []
+medium_shelf = []
+small_shelf = []
+
+for size in sorted_tshirts:
+    if size == 'L':
+        large_shelf.append(size)
     elif size == 'M':
-        medium.append(size)
-    elif size == 'L':
-        large.append(size)
+        medium_shelf.append(size)
+    elif size == 'S':
+        small_shelf.append(size)
 
-# Step 4: Sort each shelf using Insertion Sort
-small = insertion_sort(small)
-medium = insertion_sort(medium)
-large = insertion_sort(large)
-
-# Step 5: Display results
-print("\n🧺 Small Shelf:", small)
-print("👕 Medium Shelf:", medium)
-print("🧥 Large Shelf:", large)
+# Step 6: Display shelves
+print("\n🧥 Large Shelf :", large_shelf)
+print("👕 Medium Shelf:", medium_shelf)
+print("🧢 Small Shelf :", small_shelf)
